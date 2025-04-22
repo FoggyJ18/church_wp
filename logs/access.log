@@ -169,3 +169,5 @@
 127.0.0.1 - - [21/Apr/2025:23:40:03 -0400] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 58 "http://127.0.0.1:8080/wp-admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 127.0.0.1 - - [21/Apr/2025:23:42:04 -0400] "POST /wp-cron.php?doing_wp_cron=1745293324.0939099788665771484375 HTTP/1.1" 499 0 "-" "WordPress/6.8; http://127.0.0.1:8080"
 127.0.0.1 - - [21/Apr/2025:23:42:04 -0400] "POST /wp-admin/admin-ajax.php HTTP/1.1" 200 58 "http://127.0.0.1:8080/wp-admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+127.0.0.1 - - [22/Apr/2025:00:01:58 -0400] "POST /wp-admin/admin-ajax.php HTTP/1.1" 302 5 "http://127.0.0.1:8080/wp-admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+127.0.0.1 - - [22/Apr/2025:00:01:58 -0400] "GET /wp-admin/setup-config.php HTTP/1.1" 200 2716 "http://127.0.0.1:8080/wp-admin/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
