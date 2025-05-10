@@ -29,11 +29,13 @@ In Notepad++ open C:\Users\Nate\Coding\church_wp\html\churchy\wp-config-sample.p
 	DB_USER=Nate
 	DB_PASSWORD=<password for the user you created (NOT root)>
 	DB_HOST=localhost:1433
+Once updated, ctrl+alt+s to SAVE AS this file and then update its name to wp-config.php (in the same directory as the original sample)
 
 Finally we'll tell nginx where to look for the the webpages
-In Notepad++ open C:\Users\Nate\Coding\church_wp\conf\nginx.conf and in the 2 locations you see "root" uncommented (without a leading # on the line) add the following directories (include the quotes!!)
-	server:root="C:/users/Nate/Coding/church_wp/html/churchy"
-	server:location:root="C:/users/Nate/Coding/church_wp/html"
+In Notepad++ open C:\Users\Nate\Coding\church_wp\conf\nginx-sample.conf and in the 2 locations you see "root" uncommented (without a leading # on the line) add the following directories (include the quotes!!)
+	<root wp directory>="C:/users/Nate/Coding/church_wp/html/churchy"
+	<root nginx directory>="C:/users/Nate/Coding/church_wp/html"
+Once updated, ctrl+alt+s to SAVE AS this file and then update its name to nginx.conf (in the same directory as the original sample)
 
 Now that everything's configured, let's see it run!
 
