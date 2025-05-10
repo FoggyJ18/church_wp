@@ -26,7 +26,7 @@ define( 'DB_NAME', 'churchschema' );
 define( 'DB_USER', 'ldapeno' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'sh!ft!ng.twice10laugh4rs' );
+define( 'DB_PASSWORD', <password_placeholder> );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost:30666' );
