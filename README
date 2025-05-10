@@ -1,0 +1,45 @@
+This README was created in haste and may not be the most complete. You can join the CIT discord with the following link and ask questions there. Direct your help requests towards Nathan, cs, or Nate: https://discord.gg/9p35DCCE
+
+First we're going to restore the team's project database into your local MySQL instance. This README assumes you have already downloaded and installed MySQL from the proj_downloads github project.
+
+Open a new command prompt (NOT as an administrator) and type mysql to make sure that the installation worked successfully. If you get an error that "mysql" cannot be found then open Control Panel>System (or System and Security>System)>Advanced System Settings (might be on the right hand side)>on the Advanced tab click on Environment Variables.
+	In the Environment variables dialogue there are 2 sections, user variables and system variables. Start with system variables and find "path". Double-click it then open file explorer to identify the directory for your MySQL installation binaries. It'll be something like "C:\Program Files\MySQL\MySQL Server 8.0\bin" (you can also search for "mysql" in your MySQL directory and right click>Open File Location. Copy that path, go back to the Edit Environment Variable dialogue and click New, then paste the directory you copied then click OK. Next you'll repeat for the user variables but make sure where it says "User variables for <username>" that the username matches who you're currently logged in as (you can type `whoami` in cmd to check your current username).
+	If you had to update your environment variables then you'll need to open another cmd (Windows doesn't update your path variable in-place)
+
+Next enter the below command to login to your database (using the details/notes you took down during the installation steps)
+	mysql -u <username> -p
+If you hosted on nonstandard parameters you can use this login syntax
+	mysql -h 127.0.0.1 -P 1433 -u Nate -p
+Then you'll create the database using the below command
+	CREATE DATABASE churchschema;
+Exit MySQL with `quit`
+Finally you'll restore the database using the sql_backup.sql file from the cloned repo. Using the same path from before, your command would look something like this
+	mysql -h 127.0.0.1 -P 3066 -u <username> -p churchschema < C:\Users\Nate\Downloads\proj_downloads\sql_backup.sql
+
+Now we'll clone our coding repo.
+Open git bash and run the below commands to clone the repo into your preferred location in which you'd like the project to be stored. For this walkthrough we'll use the directory in the command below
+	cd C:\Users\Nate\Coding
+	git clone https://github.com/FoggyJ18/church_wp.git
+	cd church_wp
+	git checkout master
+
+Next we'll configure your wordpress site to talk to the database you just restored. We'll repeat the nonstandard parameters used above for completeness.
+In Notepad++ open C:\Users\Nate\Coding\church_wp\html\churchy\wp-config-sample.php and set each of the keys to the values represented below
+	DB_NAME=churchschema
+	DB_USER=Nate
+	DB_PASSWORD=<password for the user you created (NOT root)>
+	DB_HOST=localhost:1433
+
+Finally we'll tell nginx where to look for the the webpages
+In Notepad++ open C:\Users\Nate\Coding\church_wp\conf\nginx.conf and in the 2 locations you see "root" uncommented (without a leading # on the line) add the following directories (include the quotes!!)
+	server:root="C:/users/Nate/Coding/church_wp/html/churchy"
+	server:location:root="C:/users/Nate/Coding/church_wp/html"
+
+Now that everything's configured, let's see it run!
+
+Open 3 cmd windows NOT as admin. In the first one run
+	cd C:/users/Nate/Coding/church_wp/php
+	php-cgi.exe -b 127.0.0.1:9123
+In the other 2, run
+	cd C:/users/Nate/Coding/church_wp/
+And then in one of the last 2 run `nginx.exe` and this will start the webserver. Now you can open a web browser (Chrome, Safari, Firefox) and navigate to http://127.0.0.1:8080/wp-login.php and you should be presented with the login screen. Here you can 

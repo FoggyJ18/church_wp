@@ -2,3 +2,5 @@
 .gitignore
 ./html/churchy/wp-config.php
 ./logs/*
+./temp/*
+./conf/nginx.conf
