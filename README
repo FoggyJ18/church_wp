@@ -42,4 +42,6 @@ Open 3 cmd windows NOT as admin. In the first one run
 	php-cgi.exe -b 127.0.0.1:9123
 In the other 2, run
 	cd C:/users/Nate/Coding/church_wp/
-And then in one of the last 2 run `nginx.exe` and this will start the webserver. Now you can open a web browser (Chrome, Safari, Firefox) and navigate to http://127.0.0.1:8080/wp-login.php and you should be presented with the login screen. Here you can 
+And then in one of the last 2 run `nginx.exe` and this will start the webserver. Now you can open a web browser (Chrome, Safari, Firefox) and navigate to http://127.0.0.1:8080/wp-login.php and you should be presented with the login screen. Here you can login using the creds the team can provide.
+
+When you're finished, you can use that 3rd cmd window to run `nginx -s stop` and it will kill the webserver service. In the `php-cgi` window, you can ctrl+c and it will cancel.

@@ -1,6 +1,6 @@
 .git
 .gitignore
 ./html/churchy/wp-config.php
-./logs/*
+./logs/*.log
 ./temp/*
 ./conf/nginx.conf
