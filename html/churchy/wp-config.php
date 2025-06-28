@@ -26,7 +26,7 @@ define( 'DB_NAME', 'churchschema' );
 define( 'DB_USER', 'ldapeno' );
 
 /** Database password */
-define( 'DB_PASSWORD', <password_placeholder> );
+define( 'DB_PASSWORD', 'sh!ft!ng.twice10laugh4rs' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost:30666' );
@@ -85,7 +85,8 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
 
 /* Add any custom values between this line and the "stop editing" line. */
 

@@ -1,0 +1,2 @@
+[28-Jun-2025 20:37:18 UTC] PHP Warning:  Undefined variable $message in C:\Users\laffinboy\Desktop\www\church_wp\html\churchy\wp-content\plugins\citorg-volunteer-mgmt\includes\shortcodes.php on line 74
+[28-Jun-2025 20:55:28 UTC] PHP Parse error:  syntax error, unexpected token "}", expecting "," or ";" in C:\Users\laffinboy\Desktop\www\church_wp\html\churchy\wp-content\plugins\citorg-volunteer-mgmt\includes\shortcodes.php on line 74
